@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Assignment I</title>
+  <meta name="description" content="Adding a User with jQuery">
+  <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $("#form").submit(function(){
+        $("#right_side").append("<div class='contact_card'>" +
+        "<h1 class='name'>" + $("#first_name").val() + $("#last_name").val() + "</h1>" + "<h3 class='description'>" + "Click for Description" + "</h3>" +
+        "</div>")
+        return false;
+      });
+      $(document).on("click", "h3", function(){
+        $(".name").replaceWith("<h1>" + $("#description").val() + "</h1>" +
+        "</div>");
+        $(".description").replaceWith("<p>" + "description" + "</p>");
+      });
+    });
+  </script>
+</head>
+<body>
+  <div id="wrapper">
+    <div id="left_side">
+      <form id="form" action="process.php" method="post">
+        <h1>Add User</h1>
+        First Name:<input id="first_name" type="text">
+        <br>
+        Last Name:<input id="last_name" type="text">
+        <br>
+        Description:<input id="description" type="text">
+        <br>
+        <input id="button" type="submit" name="submit" value="Add User">
+      </form>
+    </div>
+    <div id="right_side">
+
+    </div>
+  </div>
+</body>
+</html>

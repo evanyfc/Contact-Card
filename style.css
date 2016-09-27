@@ -1,0 +1,49 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
+#wrapper{
+  height: auto;
+  width: auto;
+  padding: 50px;
+}
+
+#right_side, #left_side{
+  display: inline-block;
+  vertical-align: top;
+}
+
+#left_side{
+  width: 20%;
+  height: auto;
+}
+
+#form{
+  margin-top: 20px;
+  margin-left: 20px;
+  line-height: 30px;
+}
+
+#form h1{
+  margin-bottom: 10px;
+}
+
+#right_side{
+  width: 360px;
+  height: 1000px;
+  border: 5px solid black;
+}
+
+.contact_card{
+  margin: 25px;
+  padding: 30px;
+  width: 250px;
+  height: 100px;
+  border-radius: 5px;
+  border: 2px solid grey;
+}
+
+.contact_card h3{
+  margin-top: 30px;
+}
