@@ -18,6 +18,9 @@
        }
        return color;
     }
+    function changeBackground() {
+        $("body").css("background", random_color());
+    }
 
     $(document).ready(function(){
       $("#form").submit(function(){
@@ -29,6 +32,9 @@
         $(this).children().toggle();
         $(this).css('background-color', (random_color()));
       });
+
+      setInterval(changeBackground, 100);
+
     });
   </script>
 </head>
