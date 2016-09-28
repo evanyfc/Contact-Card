@@ -23,18 +23,19 @@
     }
 
     $(document).ready(function(){
+      $('#tunes').trigger('load')
+      $('#tunes').prop("currentTime", 10)
       $("#form").submit(function(){
         $("#right_side").append("<div class='contact_card'>" +
         "<h1 class='name'>" + $("#first_name").val() + " " + $("#last_name").val() + "</h1>" + "<h3 class='toggle'>" + "Click for Description" + "</h3>" + "<h2 class='description'>" + $("#description").val() + "</h2>" + "</div>");
+        $('#tunes').trigger('play');
+        setTimeout(function() {setInterval(changeBackground, 100)}, 28500);
         return false;
       });
       $(document).on("click", ".contact_card", function(){
         $(this).children().toggle();
         $(this).css('background-color', (random_color()));
-        $("#tunes").play();
       });
-
-      setInterval(changeBackground, 100);
 
     });
   </script>
@@ -50,6 +51,9 @@
         <input id="button" type="submit" name="submit" value="Add User">
       </form>
     </div>
+    <audio id ="tunes" preload="none">
+      <source src="sandstorm.mp3" type="audio/mpeg">
+    </audio>
     <div id="right_side">
 
     </div>
