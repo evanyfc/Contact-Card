@@ -30,6 +30,7 @@
         "<h1 class='name'>" + $("#first_name").val() + " " + $("#last_name").val() + "</h1>" + "<h3 class='toggle'>" + "Click for Description" + "</h3>" + "<h2 class='description'>" + $("#description").val() + "</h2>" + "</div>");
         $('#tunes').trigger('play');
         setTimeout(function() {setInterval(changeBackground, 100)}, 28500);
+        return false;
       });
       $(document).on("click", ".contact_card", function(){
         $(this).children().toggle();
